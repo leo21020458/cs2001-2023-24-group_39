@@ -1,0 +1,389 @@
+{
+	"info": {
+		"_postman_id": "4841972c-33ad-47d4-b729-6da426dd9fe3",
+		"name": "Brunel2023-2024VideoLearning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4181374"
+	},
+	"item": [
+		{
+			"name": "User login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"jiayuan@brunel.ac.uk\",\r\n    \"password\":\"leo_pass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User get current logon user information",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqaWF5dWFuQGJydW5lbC5hYy51ayIsImV4cCI6MTcxMTA4NzM1M30._YADNQDAm73sE06j3zn_8mOtt06wEYOmntGOZLd_ip5_Q6IeI7fHEIGnhEETN7ZpdR9hILeub3-m7L2VXbNC1A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/getCurrentLogonUserInfo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"getCurrentLogonUserInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User modify password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqaWF5dWFuQGJydW5lbC5hYy51ayIsImV4cCI6MTcxMTA4NzM1M30._YADNQDAm73sE06j3zn_8mOtt06wEYOmntGOZLd_ip5_Q6IeI7fHEIGnhEETN7ZpdR9hILeub3-m7L2VXbNC1A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldPassword\":\"leo_pass1\",\r\n    \"newPassword1\":\"leo_pass\",\r\n    \"newPassword2\":\"leo_pass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/updatePassword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"updatePassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User chage headImage",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqaWF5dWFuQGJydW5lbC5hYy51ayIsImV4cCI6MTcxMTA4NzM1M30._YADNQDAm73sE06j3zn_8mOtt06wEYOmntGOZLd_ip5_Q6IeI7fHEIGnhEETN7ZpdR9hILeub3-m7L2VXbNC1A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/changeHeadImage?headImage=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"changeHeadImage"
+					],
+					"query": [
+						{
+							"key": "headImage",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User get course visit history",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqaWF5dWFuQGJydW5lbC5hYy51ayIsImV4cCI6MTcxMTA4NzM1M30._YADNQDAm73sE06j3zn_8mOtt06wEYOmntGOZLd_ip5_Q6IeI7fHEIGnhEETN7ZpdR9hILeub3-m7L2VXbNC1A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/getVisitHistory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"getVisitHistory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User get favorites courses",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqaWF5dWFuQGJydW5lbC5hYy51ayIsImV4cCI6MTcxMTA4NzM1M30._YADNQDAm73sE06j3zn_8mOtt06wEYOmntGOZLd_ip5_Q6IeI7fHEIGnhEETN7ZpdR9hILeub3-m7L2VXbNC1A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/getFavoritesCourse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"getFavoritesCourse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User remove a favorites course",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqaWF5dWFuQGJydW5lbC5hYy51ayIsImV4cCI6MTcxMTA4NzM1M30._YADNQDAm73sE06j3zn_8mOtt06wEYOmntGOZLd_ip5_Q6IeI7fHEIGnhEETN7ZpdR9hILeub3-m7L2VXbNC1A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/removeFavoritesCourse?videoCouserId=840",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"removeFavoritesCourse"
+					],
+					"query": [
+						{
+							"key": "videoCouserId",
+							"value": "840"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User apply to change role type",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqaWF5dWFuQGJydW5lbC5hYy51ayIsImV4cCI6MTcxMTA4NzM1M30._YADNQDAm73sE06j3zn_8mOtt06wEYOmntGOZLd_ip5_Q6IeI7fHEIGnhEETN7ZpdR9hILeub3-m7L2VXbNC1A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/applyToChangeRoleType?toRoleType=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"applyToChangeRoleType"
+					],
+					"query": [
+						{
+							"key": "toRoleType",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User change email need send email verify code first",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqaWF5dWFuQGJydW5lbC5hYy51ayIsImV4cCI6MTcxMTA4NzM1M30._YADNQDAm73sE06j3zn_8mOtt06wEYOmntGOZLd_ip5_Q6IeI7fHEIGnhEETN7ZpdR9hILeub3-m7L2VXbNC1A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/sendEmailVerifyCodeForLogonUser?newEmail=jiayuan1@brunel.ac.uk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"sendEmailVerifyCodeForLogonUser"
+					],
+					"query": [
+						{
+							"key": "newEmail",
+							"value": "jiayuan1@brunel.ac.uk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User change email with a email verified code",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqaWF5dWFuQGJydW5lbC5hYy51ayIsImV4cCI6MTcxMTA4NzM1M30._YADNQDAm73sE06j3zn_8mOtt06wEYOmntGOZLd_ip5_Q6IeI7fHEIGnhEETN7ZpdR9hILeub3-m7L2VXbNC1A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"newEmail\":\"jiayuan1@brunel.ac.uk\",\r\n  \"verifyCode\":\"5491\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/changeEmailForLogonUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"changeEmailForLogonUser"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4QHNhbXBsZS5jb20iLCJleHAiOjE3MTAyMzU0MTl9.UGyWbK8uZz827ZEUmINEHmQ_bAEkgJLzI9hwNDWuF9gPZqCk44WHUuiVFOQ0YGf_rNTuMYT08gF3KUf7Eff1bA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "jwtToken",
+			"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4QHNhbXBsZS5jb20iLCJleHAiOjE3MTAxNjU1MTd9.MJ81R7Mr6bSTPF6SRGnIgU2AsCZ0V0e4lkNUnsOveG2zrMGk8hyovjrJp6T740ch6Efca_mpHZQmMFk-xk4C-w"
+		}
+	]
+}
